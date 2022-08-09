@@ -11,6 +11,8 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+ANTIGEN_LOG="/Users/mayur/Desktop/antigen.log"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -106,7 +108,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias zshconfig="open ~/.zshrc"
 alias ys="yarn start"
-alias ns="npm start"
+# alias ns="npm start"
 alias gitupdate="gco master && gl && gco - && gm master"
 alias antigenconfig="open ~/.antigenrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -124,3 +126,7 @@ antigen init ~/.antigenrc
 
 # Enable Fuzzy Search interactively using Ctrl + R
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
