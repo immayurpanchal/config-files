@@ -3,9 +3,9 @@ All config files required to setup machine/project/terminal
 
 ### TODO
 
-- [ ] .prettierrc 
-- [ ] .eslintrc
-- [ ] .gitignore 
+- [X] .prettierrc 
+- [X] .eslintrc
+- [X] .gitignore 
 - [X] .antigenrc
 - [X] .zshrc 
 - [X] .p10k.zsh
