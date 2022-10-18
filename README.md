@@ -9,3 +9,4 @@ All config files required to setup machine/project/terminal
 - [X] .antigenrc
 - [X] .zshrc 
 - [X] .p10k.zsh
+- [X] Enhancer For YouTube
