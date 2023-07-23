@@ -10,3 +10,6 @@ All config files required to setup machine/project/terminal
 - [X] .zshrc 
 - [X] .p10k.zsh
 - [X] Enhancer For YouTube
+
+# zshrc_mac 
+- rename file to .zshrc for MacOS
