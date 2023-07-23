@@ -11,7 +11,9 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-ANTIGEN_LOG="/Users/mayur/Desktop/antigen.log"
+# Create Antigen Log file if doesn't exist
+if [ ! -f ~/anitgen.log ]; then touch ~/anitgen.log; fi
+ANTIGEN_LOG="~/antigen.log"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
