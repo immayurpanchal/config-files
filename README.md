@@ -1,16 +1,26 @@
 # config-files
 All config files required to setup machine/project/terminal
 
-### TODO
+# Pre-requisite 
+- Install everything from brew.txt as few configs are dependent
 
-- [X] .prettierrc 
-- [X] .eslintrc
-- [X] .gitignore 
-- [X] .antigenrc
-- [X] .zshrc 
-- [X] .p10k.zsh
-- [X] .fzf.zsh
-- [X] Enhancer For YouTube
+# .fzf.zsh 
+- Ctrl + R binding config for interactive history with fuzzy search 
 
-# zshrc_mac 
-- rename file to .zshrc for MacOS
+# .p10k.zsh 
+- Powerlevel10k theme custom setup
+
+# .prettierrc 
+- Default prettier config for Web Projects
+
+# .gitignore 
+- Starter template for .gitignore
+
+# iTerm Profile 
+- Profile > Other Actions > Import JSON Profiles
+
+# did.ts
+- Automate deployment to raise the PR against specific branch using BunJS
+
+# dis 
+# dibm 
