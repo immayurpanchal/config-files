@@ -29,6 +29,9 @@ const USER_URL_PARAMS: URLParams = {
   labels: [':mag: Code Review', ':x: Do Not Merge']
 };
 
+const BACK_MERGE_DATE = `${new Date().getDate()}_${new Date().getMonth() + 1}_${new Date().getFullYear()}`;
+const backMergeBranchName = `chore/backmerge_${BACK_MERGE_DATE}_{suffix}`;
+
 const main = async () => {
   const {
     deployment: { SOURCE_BRANCH_PROMPT, ENV_BRANCH_PROMPT, SUFFIX }
@@ -37,7 +40,7 @@ const main = async () => {
   const sourceBranch = await getUserInput(SOURCE_BRANCH_PROMPT);
   const envBranch = await getUserInput(ENV_BRANCH_PROMPT);
   const suffix = await getUserInput(SUFFIX);
-  const NEW_BRANCH = `${sourceBranch}_${envBranch}_${suffix}`;
+  const NEW_BRANCH = backMergeBranchName.replace('{suffix}', suffix);
 
   await stashChanges();
   await checkoutEnvBranch(envBranch);
