@@ -34,11 +34,11 @@ const backMergeBranchName = `chore/backmerge_${BACK_MERGE_DATE}_{suffix}`;
 
 const main = async () => {
   const {
-    deployment: { SOURCE_BRANCH_PROMPT, ENV_BRANCH_PROMPT, SUFFIX }
+    deployment: { SUFFIX }
   } = messages;
 
-  const sourceBranch = await getUserInput(SOURCE_BRANCH_PROMPT);
-  const envBranch = await getUserInput(ENV_BRANCH_PROMPT);
+  const sourceBranch = 'master';
+  const envBranch = 'dev';
   const suffix = await getUserInput(SUFFIX);
   const NEW_BRANCH = backMergeBranchName.replace('{suffix}', suffix);
 
