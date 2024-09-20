@@ -18,6 +18,7 @@ gettext
 gh
 giflib
 git
+git-filter-repo
 glib
 graphite2
 graphviz
@@ -62,8 +63,10 @@ m4
 mas
 mkcert
 mpdecimal
+neofetch
 netpbm
 node
+ollama
 oniguruma
 openexr
 openssl@3
@@ -77,6 +80,8 @@ pre-commit
 python@3.12
 readline
 rpm
+screenresolution
+sqlite
 webp
 wget
 xorgproto
@@ -84,13 +89,18 @@ xz
 yarn
 zstd
 amazon-q
+android-platform-tools
 arc
 autoraiseapp
 chatgpt
+discord
+fig
+firefox
 handshaker
 hiddenbar
 insomnia
 iterm2@beta
+microsoft-edge
 notion
 pritunl
 raycast
