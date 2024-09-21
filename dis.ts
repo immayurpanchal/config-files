@@ -1,6 +1,7 @@
 #!/usr/bin/env bun
 
 import { $ } from 'bun';
+import { mergeBranches } from './util';
 
 const dis = async () => {
   console.log('Executing BunJS script 🚜');
@@ -15,7 +16,9 @@ const dis = async () => {
   await $`git checkout ${branchToSyncWith}`;
   await $`git pull origin ${branchToSyncWith}`;
   await $`git checkout -`;
-  await $`git merge ${branchToSyncWith}`;
+  // get current branch where the script is being executed
+  const currentBranch = await (await $`git branch --show-current`.text()).trim();
+  mergeBranches(branchToSyncWith, currentBranch);
 };
 
 dis().catch(error => {
