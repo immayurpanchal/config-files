@@ -9,32 +9,32 @@ antigen bundle sudo
 
 # Load bundles from external repos.
 antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-autosuggestions
+# antigen bundle zsh-users/zsh-autosuggestions
 
 # antigen bundle for deepintent sync 
 # antigen bundle immayurpanchal/di-sync 
 
 # antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zdharma-continuum/fast-syntax-highlighting
-antigen bundle sinetoami/web-search
+# antigen bundle sinetoami/web-search
 antigen bundle djui/alias-tips
 antigen bundle chrissicool/zsh-256color
-antigen bundle junegunn/fzf
+# antigen bundle junegunn/fzf
 antigen bundle unixorn/autoupdate-antigen.zshplugin
-antigen bundle TamCore/autoupdate-oh-my-zsh-plugins
-antigen bundle wfxr/forgit
-antigen bundle changyuheng/fz
-antigen bundle caarlos0-graveyard/zsh-git-sync
+# antigen bundle TamCore/autoupdate-oh-my-zsh-plugins
+# antigen bundle wfxr/forgit
+# antigen bundle changyuheng/fz
+# antigen bundle caarlos0-graveyard/zsh-git-sync
 antigen bundle caarlos0-graveyard/zsh-open-pr
 
 # Dependency of jq for n.zsh
 # antigen bundle gretzky/n.zsh
 
 antigen bundle qoomon/zsh-lazyload
-antigen bundle changyuheng/zsh-interactive-cd
+# antigen bundle changyuheng/zsh-interactive-cd
 
 # fuzzy search directory : fd 3 for depth
-antigen bundle aubreypwd/zsh-plugin-fd
+# antigen bundle aubreypwd/zsh-plugin-fd
 
 # Select theme.
 antigen theme romkatv/powerlevel10k
