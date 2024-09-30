@@ -3,6 +3,11 @@ import { $ } from 'bun';
 
 export type URLParams = { assignees: string; labels: string[] };
 
+export const USER_URL_PARAMS: URLParams = {
+  assignees: 'immayurpanchal',
+  labels: [':mag: Code Review', ':x: Do Not Merge']
+};
+
 export const createURLParams = (urlParams: URLParams): string => {
   const { assignees, labels } = urlParams;
   const joinedLabels = labels.join(',');

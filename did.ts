@@ -12,7 +12,7 @@ import {
   openPR,
   pushChanges,
   stashChanges,
-  URLParams
+  USER_URL_PARAMS
 } from './util';
 
 export type InputType = {
@@ -22,11 +22,6 @@ export type InputType = {
   assignees: string;
   labels: string[];
   isBackMerge: boolean;
-};
-
-const USER_URL_PARAMS: URLParams = {
-  assignees: 'immayurpanchal',
-  labels: [':mag: Code Review', ':x: Do Not Merge']
 };
 
 const main = async () => {
