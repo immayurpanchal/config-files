@@ -11,7 +11,7 @@ export const createURLParams = (urlParams: URLParams): string => {
     assignees,
     labels: joinedLabels
   });
-  return `?${params.toString()}`;
+  return `${params.toString()}`;
 };
 
 export const getUserInput = async (prompt: string): Promise<string> => {
