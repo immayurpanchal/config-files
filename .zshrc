@@ -106,9 +106,11 @@ export LANG=en_US.UTF-8
 # Example aliases
 alias zshconfig="code -r ~/.zshrc"
 alias ohmyzsh="code -r ~/.oh-my-zsh"
-alias ys="yarn start"
-alias pr="open-pr"
+alias ys="yarn && yarn start"
+alias pr="~/scripts/pr.ts"
 alias did="~/scripts/did.ts"
+alias dibm="~/scripts/dibm.ts"
+alias dis="~/scripts/dis.ts"
 
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
@@ -128,7 +130,21 @@ antigen init ~/.antigenrc
 
 # Enable Fuzzy Search interactively using Ctrl + R
 # Set up fzf key bindings and fuzzy completion
-source ~/.fzf.zsh
+# Make sure fzf is installed before sourcing & .fzf.zsh exist
+# source ~/.fzf.zsh
+source <(fzf --zsh)
 
+# Preview file content using bat (https://github.com/sharkdp/bat)
+export FZF_CTRL_T_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'bat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+
+# Print tree structure in the preview window
+export FZF_ALT_C_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'tree -C {}'"
+
+  
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
