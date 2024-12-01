@@ -1,4 +1,3 @@
-# remove the _zinit suffix 
 # zmodload zsh/zprof
 
 source $HOMEBREW_PREFIX/opt/zinit/zinit.zsh
@@ -6,14 +5,17 @@ source $HOMEBREW_PREFIX/opt/zinit/zinit.zsh
 # Add support for Starship
 eval "$(starship init zsh)"
 
-zinit ice wait"2" lucid
+zinit ice wait"5" lucid
 zinit light rupa/z
-# Add Git aliases without Oh My Zsh
-# zinit ice wait"2"
+zinit ice wait"5" lucid
 zinit snippet OMZ::plugins/git/git.plugin.zsh
 
+
+zinit ice wait"10"
+eval "$(fnm env --use-on-cd --shell zsh)"
+
 # Example aliases
-zinit ice wait"2" lucid
+zinit ice wait"5" lucid
 alias zshconfig="code -r ~/.zshrc"
 alias ohmyzsh="code -r ~/.oh-my-zsh"
 alias ys="yarn && yarn start"
@@ -23,7 +25,6 @@ alias dibm="~/scripts/dibm.ts"
 alias dis="~/scripts/dis.ts"
 alias gpp="yarn && git push"
 
-# zinit auto completion
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
