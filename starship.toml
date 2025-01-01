@@ -27,42 +27,44 @@ $scala\
 $docker_context\
 [](fg:#06969A bg:#33658A)\
 $time\
+$shell\
 [](fg:#33658A bg:#86BBD8)\
 $cmd_duration\
 [ ]( fg:#86BBD8)\
 $character\
 """
-
 # [ ](fg:#06969A bg:#06969A)\
 
+### Overwrite default time out from 500ms
+command_timeout = 1000
+
 # Disable the blank line at the start of the prompt
-add_newline = false
+add_newline = true
 
 # Wait 10 milliseconds for starship to check files under the current directory.
 scan_timeout = 10
 
-
 [cmd_duration]
-style = "bg:#86BBD8"
-show_milliseconds = true
-min_time = 100
-show_notifications = true
-min_time_to_notify = 50_000
 format = '[  $duration ]($style)'
+min_time = 10
+min_time_to_notify = 50_000
+show_milliseconds = true
+show_notifications = true
+style = "bg:#86BBD8 fg:#1f2937"
 
 [character]
-success_symbol = '✅ '
 error_symbol = '❌ '
-format = '[$symbol]($style)'
+format = '[$symbol]($style) '
+success_symbol = '✅ '
 
 # You can also replace your username with a neat symbol like   or disable this
 # and use the os module below
 [username]
-show_always = true
-style_user = "bg:#9A348E"
-style_root = "bg:#9A348E"
-format = '[$user ]($style)'
 disabled = true
+format = '[$user ]($style)'
+show_always = true
+style_root = "bg:#9A348E"
+style_user = "bg:#9A348E"
 
 [os.symbols]
 Macos = " "
@@ -70,23 +72,23 @@ Macos = " "
 # An alternative to the username module which displays a symbol that
 # represents the current operating system
 [os]
-style = "bg:#9A348E"
 disabled = false # Disabled by default
-format = '[$symbol]($style)'
+format = '[$symbol]($style)' 
+style = "bg:#9A348E" 
 
 [directory]
-style = "bg:#DA627D"
 format = "[ $path ]($style)"
+home_symbol = "~"
+style = "bg:#DA627D fg:#1f2937"
 truncation_length = 2
 truncation_symbol = " "
-home_symbol = "~"
 # truncation_symbol = "…/"
 
 # Here is how you can shorten some long paths by text replacement
 # similar to mapped_locations in Oh My Posh:
 [directory.substitutions]
 "Documents" = "󰈙 "
-"Downloads" = " "
+"Downloads" = " "
 "Music" = " "
 "Pictures" = " "
 # Keep in mind that the order matters. For example:
@@ -97,109 +99,108 @@ home_symbol = "~"
 
 [c]
 disabled = true
-symbol = " "
-style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]($style)'
+style = "bg:#86BBD8"
+symbol = " "
 
 [docker_context]
 disabled = true
-symbol = " "
-style = "bg:#06969A"
 format = '[ $symbol $context ]($style)'
+style = "bg:#06969A"
+symbol = " "
 
 [elixir]
 disabled = true
-symbol = " "
-style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]($style)'
+style = "bg:#86BBD8"
+symbol = " "
 
 [elm]
 disabled = true
-symbol = " "
-style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]($style)'
+style = "bg:#86BBD8"
+symbol = " "
 
 [git_branch]
-symbol = ""
-style = "bg:#FCA17D"
 format = '[ $symbol $branch ]($style)'
+style = "bg:#FCA17D fg:#1f2937"
+symbol = ""
 
 [git_state]
-style = "bg:#FCA17D"
-merge = ""
 format = '[\($state( $progress_current of $progress_total)\)]($style)'
-
+merge = ""
+style = "bg:#FCA17D fg:#1f2937"
 
 [git_status]
-style = "bg:#FCA17D"
 ahead = '⇡${count}'
-diverged = '⇡${ahead_count}⇣${behind_count}'
 behind = '⇣${count}'
-stashed = '⚑${count}'
+diverged = '⇡${ahead_count}⇣${behind_count}'
 format = '[$stashed $ahead_behind $state]($style)'
+stashed = '⚑${count}'
+style = "bg:#FCA17D fg:#1f2937"
 
 [golang]
 disabled = true
-symbol = " "
-style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]($style)'
+style = "bg:#86BBD8"
+symbol = " "
 
 [gradle]
 disabled = true
-style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]($style)'
+style = "bg:#86BBD8"
 
 [haskell]
 disabled = true
-symbol = " "
-style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]($style)'
+style = "bg:#86BBD8"
+symbol = " "
 
 [java]
 disabled = true
-symbol = " "
-style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]($style)'
+style = "bg:#86BBD8"
+symbol = " "
 
 [julia]
 disabled = true
-symbol = " "
-style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]($style)'
+style = "bg:#86BBD8"
+symbol = " "
 
 [nodejs]
-symbol = "󰎙 "
-style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]($style)'
+style = "bg:#86BBD8 fg:#1f2937"
+symbol = "󰎙 "
 
 [custom.fnm_nodejs]
 command = "fnm current"
-when = "true"
-symbol = "󰎙 "
-style = "bg:#86BBD8"
 format = '[ $symbol ($output) ]($style)'
+style = "bg:#86BBD8 fg:#1f2937"
+symbol = "󰎙 "
+when = "true"
 # format = " $symbol($output) "
 
 [nim]
 disabled = true
-symbol = "󰆥 "
-style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]($style)'
+style = "bg:#86BBD8"
+symbol = "󰆥 "
 
 [rust]
 disabled = true
-symbol = ""
-style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]($style)'
+style = "bg:#86BBD8"
+symbol = ""
 
 [scala]
 disabled = true
-symbol = " "
-style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]($style)'
+style = "bg:#86BBD8"
+symbol = " "
 
 [time]
-disabled = false
+disabled = false 
+format = '[ ♥ $time ]($style)' 
+style = "bg:#33658A fg:#FFFFFF" 
 time_format = "%I:%M %p" # Hour:Minute AM/PM Format
-style = "bg:#33658A"
-format = '[ ♥ $time ]($style)'
