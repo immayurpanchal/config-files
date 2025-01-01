@@ -2,16 +2,37 @@
 
 source $HOMEBREW_PREFIX/opt/zinit/zinit.zsh
 
-# Add support for Starship
-eval "$(starship init zsh)"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=180'
 
-zinit ice wait"5" lucid
-zinit light rupa/z
-zinit ice wait"5" lucid
+# Load starship theme
+# line 1: `starship` binary as command, from github release
+# line 2: starship setup at clone(create init.zsh, completion)
+# line 3: pull behavior same as clone, source init.zsh
+zinit ice as"command" from"gh-r" \
+          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
+          atpull"%atclone" src"init.zsh"
+zinit light starship/starship
+
+# Add support for Starship
+# eval "$(starship init zsh)"
+
 zinit snippet OMZ::plugins/git/git.plugin.zsh
 
+zinit ice from"gh-r" as"program"
+zinit light junegunn/fzf
 
-zinit ice wait"10"
+# Add fzf keybindings and completion
+zinit snippet 'https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.zsh'
+zinit snippet 'https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.zsh'
+
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-syntax-highlighting
+
+zinit ice wait"2" lucid
+zinit light rupa/z
+
+
+zinit ice wait"4" lucid
 eval "$(fnm env --use-on-cd --shell zsh)"
 
 # Example aliases
