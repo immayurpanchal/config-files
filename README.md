@@ -56,3 +56,6 @@ All config files required to setup machine/project/terminal
 
 # pr
 - Create GitHub PR URL against any branch from the current branch (i.e. pr master ↩️)
+
+# sketchybar
+- Check sketchybar README.md file for more info
