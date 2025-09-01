@@ -35,6 +35,9 @@ zinit light rupa/z
 zinit ice wait"4" lucid
 eval "$(fnm env --use-on-cd --shell zsh)"
 
+# Load fzf (Homebrew path)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Example aliases
 zinit ice wait"5" lucid
 alias zshconfig="code -r ~/.zshrc"
@@ -50,3 +53,6 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
 # zprof
+
+alias gh-create='gh repo create --private --source=. --remote=origin && git push -u --all && gh browse'
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
